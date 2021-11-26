@@ -20,6 +20,14 @@ var app = (0, express_1.default)();
 // view engine setup
 app.set('views', path_1.default.join(__dirname, '../../views'));
 app.set('view engine', 'jade');
+app.use((req, res, next) => {
+    // allow different IP address
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    // allow different header field 
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', 'POST, PUT, GET, OPTIONS');
+    next();
+});
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
@@ -38,12 +46,6 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
-    res.set({
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-    });
-    res.header('Access-Control-Allow-Headers', '*');
-    res.header('Access-Control-Allow-Methods', 'POST, PUT, GET, OPTIONS');
     // render the error page
     res.status(err.status || 500);
     res.render('error');
