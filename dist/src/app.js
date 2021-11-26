@@ -11,6 +11,11 @@ const morgan_1 = __importDefault(require("morgan"));
 const author_1 = __importDefault(require("./routes/author"));
 const index_1 = __importDefault(require("./routes/index"));
 const users_1 = __importDefault(require("./routes/users"));
+const cors_1 = __importDefault(require("cors"));
+const corsOptions = {
+    origin: "http://localhost:3000",
+    optionsSuccessStatus: 200
+};
 var app = (0, express_1.default)();
 // view engine setup
 app.set('views', path_1.default.join(__dirname, '../../views'));
@@ -20,6 +25,7 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
+app.use((0, cors_1.default)(corsOptions));
 app.use('/', index_1.default);
 app.use('/users', users_1.default);
 app.use('/author', author_1.default);
@@ -32,6 +38,10 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.set({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+    });
     // render the error page
     res.status(err.status || 500);
     res.render('error');

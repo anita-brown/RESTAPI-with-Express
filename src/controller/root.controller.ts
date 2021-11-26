@@ -1,7 +1,7 @@
 import express, {Request, Response, NextFunction} from 'express';
 import { readFile, writeFile, author } from '../utils/utils';
 import {getIdForBooks, validateEntry} from '../utils/utils';
-
+import cors from 'cors'
 
 
 var control = express();

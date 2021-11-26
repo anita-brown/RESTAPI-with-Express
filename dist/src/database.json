@@ -21,21 +21,5 @@
                 "serialNumber": null
             }
         ]
-    },
-    {
-        "id": 2,
-        "author": "John Stone2",
-        "age": 28,
-        "address": "5, Wall Street, Buckingham",
-        "dateRegistered": 1637779160737,
-        "books": [
-            {
-                "id": "book1",
-                "name": "Coming home from author 2",
-                "isPublished": false,
-                "datePublished": null,
-                "serialNumber": null
-            }
-        ]
     }
 ]
