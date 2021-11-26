@@ -47,6 +47,8 @@ app.use(function(err:HttpError, req:Request, res:Response, next:NextFunction) {
     "Access-Control-Allow-Origin": "*",
 });
 
+  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Methods', 'POST, PUT, GET, OPTIONS');
   // render the error page
   res.status(err.status || 500);
   res.render('error');

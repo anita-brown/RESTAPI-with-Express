@@ -42,6 +42,8 @@ app.use(function (err, req, res, next) {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
     });
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', 'POST, PUT, GET, OPTIONS');
     // render the error page
     res.status(err.status || 500);
     res.render('error');
