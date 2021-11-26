@@ -13,7 +13,7 @@ const index_1 = __importDefault(require("./routes/index"));
 const users_1 = __importDefault(require("./routes/users"));
 const cors_1 = __importDefault(require("cors"));
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "http://localhost:5500"],
     optionsSuccessStatus: 200
 };
 var app = (0, express_1.default)();
