@@ -1,41 +1,32 @@
 const imageArr = ["./images/box.png", "./images/box4.png"];
 let rootDiv = document.getElementById("root");
-let deleteAuthor;
+// let deleteAuthor;
 let authorName = document.getElementById('author-name')
 let age = document.getElementById('author-age')
 let address = document.getElementById('author-address')
 let books = document.getElementById('author-books')
 let editAuthor = document.getElementById("edit")
 let submitBtn = document.querySelector('.btn-class-2')
-// console.log(submitBtn)
-console.log(rootDiv)
 
-fetchData()
-function fetchData(){
-    fetch("https://authorandbooks.herokuapp.com/author")
-    .then(res => res.json())
-    .then(renderData)
-}// Get rendering
-/*DELETE function*/
-rootDiv.addEventListener('click', (e)=>{
-    let deleteButton = e.target.id == "delete"
-    let editButton = e.target.id == "edit"
-    console.log(e.target.parentElement.dataset.id)
-    if(deleteButton){
-        console.log("delete author")
-        fetch(`${"https://authorandbooks.herokuapp.com/author"}/1`)
-    }
-})
+
+async function fetchData(){
+    const res = await fetch("https://authorandbooks.herokuapp.com/author")
+    const {data} = await res.json()
+    console.log(data)
+
+
+
 
 /* GET function*/
-function renderData(fetchData){
+// function renderData(fetchData){
+    console.log(rootDiv)
     rootDiv.innerHTML = ""
-    let authorInfo = fetchData.data
+    let authorInfo = data
     let bookNo = ""
     authorInfo.forEach((eachAuthor, index) => {
-        let {authorId, author, age, address, bookNo, dateRegistered } = eachAuthor
+        let {id, author, age, address, bookNo, dateRegistered } = eachAuthor
         rootDiv.innerHTML += ` 
-        <tr data-id = ${authorId}>
+        <tr id= "${id}">
         <th scope="row"><a href="./next2.html"><img class ="img" src="${imageArr[index]}" alt=""></a><p>${author} </th>
         <td>${age}</td>
         <td>${new Date(dateRegistered).toDateString()}</td>
@@ -51,9 +42,29 @@ function renderData(fetchData){
         </div>
         `
 })
-}
+// }
 
-/*POST function*/
+//close
+}// Get rendering
+
+fetchData()
+
+/*
+//////  DELETE function  //////
+rootDiv.addEventListener('click', (e)=>{
+    let deleteButton = e.target.id == "delete"
+    let editButton = e.target.id == "edit"
+    console.log(e.target.parentElement.dataset.id)
+    if(deleteButton){
+        console.log("delete author")
+        fetch(`${"https://authorandbooks.herokuapp.com/author"}/1`)
+    }
+})
+*/
+
+/*
+
+//// POST function /////
 // console.log(submitBtn)
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -76,4 +87,5 @@ renderData(dataArr)
 }) 
 })
 
+*/
 
