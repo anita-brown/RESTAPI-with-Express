@@ -4,18 +4,18 @@
         "author": "John Stone",
         "age": 28,
         "address": "5, Wall Street, Buckingham",
-        "dateRegistered": 1637779141263,
+        "dateRegistered": 1638388500959,
         "books": [
             {
                 "id": "book1",
-                "name": "Coming home",
+                "name": "Tomorrow is coming",
                 "isPublished": true,
-                "datePublished": "5-01-2005",
-                "serialNumber": "090768"
+                "datePublished": 1637159508581,
+                "serialNumber": 10
             },
             {
                 "id": "book2",
-                "name": "Coming home",
+                "name": "October's very own",
                 "isPublished": false,
                 "datePublished": null,
                 "serialNumber": null

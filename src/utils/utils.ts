@@ -22,6 +22,7 @@ export const validateEntry = (data: author) => {
 export const readFile = () => {
     try{
         const data = fs.readFileSync(myFilePath, {encoding:'utf8'})
+        console.log(data)
         return JSON.parse(data);
         
     }catch(error){

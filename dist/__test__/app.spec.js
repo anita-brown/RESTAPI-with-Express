@@ -116,8 +116,8 @@ describe('PUT AUTHOR', () => {
         });
         const updatedAuthor = await (0, supertest_1.default)(app_1.default)
             .put(`/author/${newAuthor.body.data.id}`)
-            .send({ author: "John kernel" });
-        expect(updatedAuthor.body.data.author).toBe("John kernel");
+            .send({ author: "John doe" });
+        expect(updatedAuthor.body.data.author).toBe("John doe");
         expect(updatedAuthor.body.data).toHaveProperty("id");
         expect(updatedAuthor.statusCode).toBe(201);
     });

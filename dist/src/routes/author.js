@@ -16,3 +16,4 @@ router.put('/:authorId/book/:bookId', root_controller_1.updateBook);
 router.delete('/:id', root_controller_1.deleteAuthor);
 router.delete('/:authorId/book/:bookId', root_controller_1.deleteBook);
 exports.default = router;
+// https://authorandbooks.herokuapp.com/author/1

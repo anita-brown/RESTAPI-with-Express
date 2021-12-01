@@ -8,6 +8,7 @@ var control = express();
 
 export const getAllAuthors = (req: Request, res: Response, next: NextFunction) => {
     const data = readFile();
+    console.log("anita")
     res.status(200).json({message: 'succesfull', data: data})
 }
 
@@ -153,7 +154,8 @@ export const updateBook = (req: Request, res:Response, next:NextFunction) =>{
     const newData = {...bookToUpdate, ...req.body};
     const dataIndex = authorFind.books.findIndex((item:author) => `${item.id}` === req.params.bookId)
     authorFind.books.splice(dataIndex, 1, newData);
-    writeFile(authorFind.books)
+
+    writeFile(authorFind)
     res.status(201).json({message: "book updated...", data: newData})
 }
 

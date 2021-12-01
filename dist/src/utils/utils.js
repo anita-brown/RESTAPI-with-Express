@@ -24,6 +24,7 @@ exports.validateEntry = validateEntry;
 const readFile = () => {
     try {
         const data = fs_1.default.readFileSync(myFilePath, { encoding: 'utf8' });
+        console.log(data);
         return JSON.parse(data);
     }
     catch (error) {

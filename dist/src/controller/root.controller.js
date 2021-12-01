@@ -10,6 +10,7 @@ const utils_2 = require("../utils/utils");
 var control = (0, express_1.default)();
 const getAllAuthors = (req, res, next) => {
     const data = (0, utils_1.readFile)();
+    console.log("anita");
     res.status(200).json({ message: 'succesfull', data: data });
 };
 exports.getAllAuthors = getAllAuthors;
@@ -139,7 +140,7 @@ const updateBook = (req, res, next) => {
     const newData = { ...bookToUpdate, ...req.body };
     const dataIndex = authorFind.books.findIndex((item) => `${item.id}` === req.params.bookId);
     authorFind.books.splice(dataIndex, 1, newData);
-    (0, utils_1.writeFile)(authorFind.books);
+    (0, utils_1.writeFile)(authorFind);
     res.status(201).json({ message: "book updated...", data: newData });
 };
 exports.updateBook = updateBook;
