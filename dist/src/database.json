@@ -11,7 +11,7 @@
                 "name": "Tomorrow is coming",
                 "isPublished": true,
                 "datePublished": 1637159508581,
-                "serialNumber": 10
+                "serialNumber": 102
             },
             {
                 "id": "book2",
@@ -24,25 +24,10 @@
     },
     {
         "id": 2,
-        "author": "Mark Otto",
-        "age": 35,
-        "address": "20, Brooklyn Street, Minnesota",
-        "dateRegistered": 1638392794271,
-        "books": [
-            {
-                "id": "book1",
-                "name": "The Narrow Road ",
-                "isPublished": true,
-                "datePublished": 1637159508581,
-                "serialNumber": 15
-            },
-            {
-                "id": "book2",
-                "name": "Man's Search For Meaning",
-                "isPublished": false,
-                "datePublished": null,
-                "serialNumber": null
-            }
-        ]
+        "author": "brown Otto",
+        "age": 37,
+        "address": "20, Minnesota",
+        "dateRegistered": 1638729863464,
+        "books": []
     }
 ]

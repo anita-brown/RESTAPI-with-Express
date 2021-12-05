@@ -4,16 +4,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const root_controller_1 = require("../controller/root.controller");
+const authorController_1 = __importDefault(require("../controller/authorController"));
 const router = express_1.default.Router();
-router.get('/', root_controller_1.getAllAuthors);
-router.get('/:id', root_controller_1.getAuthorById);
-router.get('/:authorId/book/:bookId', root_controller_1.getABook);
-router.post('/', root_controller_1.postAuthor);
-router.post('/:authorId/add-book', root_controller_1.postBook);
-router.put('/:id', root_controller_1.updateAuthor);
-router.put('/:authorId/book/:bookId', root_controller_1.updateBook);
-router.delete('/:id', root_controller_1.deleteAuthor);
-router.delete('/:authorId/book/:bookId', root_controller_1.deleteBook);
+router.get('/', authorController_1.default.getAllAuthors);
+router.get('/:id', authorController_1.default.getAuthorById);
+router.post('/', authorController_1.default.postAuthor);
+router.put('/:id', authorController_1.default.updateAuthor);
+router.delete('/:id', authorController_1.default.deleteAuthor);
+// router.get('/:authorId/book/:bookId', getABook)
+// router.post('/:authorId/add-book', postBook)
+// router.put('/:authorId/book/:bookId', updateBook)
+// router.delete('/:authorId/book/:bookId', deleteBook)
 exports.default = router;
 // https://authorandbooks.herokuapp.com/author/1
