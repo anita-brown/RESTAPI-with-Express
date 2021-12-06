@@ -1,12 +1,34 @@
 import fs from 'fs';
 import path from 'path';
 import Joi from 'joi';
+import { Jwt } from 'jsonwebtoken';
 // import uuidv4 from 'uuidv4'
 // Export and Create interface for keys types in the object
 // Export, Create, Read and write files to database in json format
 const myFilePath = path.join(__dirname, '../database.json');
+const usersPath = path.join(__dirname, '../users.json');
 
 
+
+export const readUsersFile= () => {
+    try {
+        const userData = fs.readFileSync(usersPath, {encoding: "utf-8"})
+        console.log(userData)
+        return JSON.parse(userData);
+    } catch (error) {
+        console.log(error, "error occured")
+        return []
+    }
+
+}
+
+export const writeUsersFile = (userData: Users[]) => {
+    try {
+        fs.writeFileSync(usersPath, JSON.stringify(userData, null, 4))
+    } catch (error) {
+        
+    }
+}
 
 export const validateEntry = (data: author) => {
     const schema = Joi.object({
@@ -26,7 +48,7 @@ export const readFile = () => {
         return JSON.parse(data);
         
     }catch(error){
-        console.log(error, "errored")
+        console.log(error, "error occured")
         return []
     }
     
@@ -62,4 +84,12 @@ export interface books {
     isPublished: boolean,
     datePublished: Date | null,
     serialNumber: number|null
+}
+export interface Users {
+    id? : string,
+    name: string,
+    email: string,
+    password: string,
+    dateOfBirth: string
+
 }

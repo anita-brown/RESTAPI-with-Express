@@ -1,0 +1,16 @@
+[
+    {
+        "id": "dc670dc1-797e-4f88-9d18-63adc62a1922",
+        "name": "John Stone",
+        "dateOfBirth": "23/04/2000",
+        "email": "anita@gmail.com",
+        "password": "$2b$10$VdZzdKTJrwpUW7uisGCyVeOtSiN41APwqqmLtv3TtOfvpd1xKNoBW"
+    },
+    {
+        "id": "8c971699-b5e1-43f2-9450-ce61be66ce21",
+        "name": "Merry Stone",
+        "dateOfBirth": "23/04/2000",
+        "email": "merrystone@gmail.com",
+        "password": "$2b$10$IV7VQafJ/B3hzFDjMB8.y.Y.aifyGcWsB3OxEQkHcKw1Uaf2z2zNK"
+    }
+]

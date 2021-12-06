@@ -1,11 +1,13 @@
 import  createError, { HttpError } from 'http-errors';
 import express, { NextFunction, Request, Response }  from 'express';
+
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import authorRouter from './routes/author'
 
-import indexRouter from './routes/index';
+import authorRouter from './routes/authorRoute'
+import bookRouter from './routes/bookRoute'
+// import postRouter from './routes/post';
 import usersRouter from './routes/users';
 import cors from 'cors';
 
@@ -38,7 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors(corsOptions));
 
-app.use('/', indexRouter);
+// app.use('/posts', postRouter);
+app.use('/book', bookRouter);
 app.use('/users', usersRouter);
 app.use('/author', authorRouter);
 

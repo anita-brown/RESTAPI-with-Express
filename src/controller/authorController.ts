@@ -1,6 +1,6 @@
 import express, {Request, Response, NextFunction} from 'express';
 import { readFile, writeFile, author } from '../utils/utils';
-import {getIdForBooks, validateEntry} from '../utils/utils';
+import {validateEntry} from '../utils/utils';
 
 
 
