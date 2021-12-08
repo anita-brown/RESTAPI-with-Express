@@ -77,7 +77,7 @@
         <div class="col-lg-4"></div>
       </div>
     </div>
-
+<!-- EDIT ALL AUTHORS RENDERING WITH PUT -->
     <script>
       let authorName = document.getElementById("author-name");
       let age = document.getElementById("author-age");
@@ -104,32 +104,10 @@
          document.getElementById("author-age").value = age
          document.getElementById("author-address").value = address
         document.getElementById("author-books").value = books
-      //    document.getElementById('page').value = pageCount
-      //    document.getElementById('genre').value = Genre
-      //    document.getElementById('publisher').value = Publisher
+     
        })
       }
 
-
-
-    //     let editButton = e.target.id == "edit";
-    //     let id = e.target.parentElement.parentElement.parentElement.dataset.id;
-
-    //     if (editButton) {
-    //       console.log("edit author");
-    //       const parent = e.target.parentElement.parentElement.parentElement;
-    //       console.log(parent, "ttt");
-    //       let authorContent = parent.querySelector(".content").textContent;
-    //       let ageContent = parent.querySelector(".age-content").textContent;
-    //       let addContent = parent.querySelector(".add-content").textContent;
-    //       //    let bookContent = parent.querySelector(".book-content").textContent;
-    //       console.log(authorContent, ageContent, addContent, bookContent);
-
-    //       authorName.value = authorContent;
-    //       age.value = ageContent;
-    //       add.value = addContent;
-    //       //    book.value = bookContent;
-    //     }
 
         saveBtn.addEventListener("click", (e) => {
           console.log("updated");
@@ -156,81 +134,6 @@
         });
     
 
-      //                 let save = document.getElementById('form')
-      // let title = document.getElementById('title')
-      // let author = document.getElementById('author')
-      // let data = document.getElementById('date')
-      // let description = document.getElementById('description')
-      // let page = document.getElementById('page')
-      // let genre = document.getElementById('genre')
-      // let publisher = document.getElementById('publisher')
-      // let params = new URLSearchParams(document.location.search)
-      // let id = params.get('id')
-      // document.addEventListener('DOMContentLoaded', () => {
-      //   getData()
-      // })
-      // async function getData() {
-      // await fetch(`https://folusobookapi.herokuapp.com/books/${id}`, {
-      //  method: 'GET'
-      // }).then(response => response.json())
-      //  .then(result => {
-      //   let { Title, Author, datePublished, Description, pageCount, Genre, bookId, Publisher } = result
-      //     document.getElementById('title').value = Title
-      //     document.getElementById('author').value = Author
-      //    document.getElementById('date').value = datePublished.substring(0, 10)
-      //    document.getElementById('description').value = Description
-      //    document.getElementById('page').value = pageCount
-      //    document.getElementById('genre').value = Genre
-      //    document.getElementById('publisher').value = Publisher
-      //  })
-      // }
-      // save.addEventListener('submit', (e) => {
-      //  e.preventDefault()
-      //  fetch(`https://folusobookapi.herokuapp.com/books/${id}`, {
-      //    method: 'PUT',
-      //    headers: {
-      //      'Content-Type': 'application/json',
-      //    },
-      //    body: JSON.stringify({
-      //      Title: title.value,
-      //      Author: author.value,
-      //      datePublished: date.value,
-      //      Description: description.value,
-      //      pageCount: page.value,
-      //      Genre: genre.value,
-      //      Publisher: publisher.value,
-      //    }),
-      //  }).then((response) => response.json())
-      //    .then((result) => {
-      //      alert(
-      //        `Book with the id no. ${result.bookId} have succesfully been created`
-      //      )
-      //    })
-      //    .then(() => location.reload())
-      // })
-
-      // END
-
-      //                   submitBtn.addEventListener('click', (e) => {
-      //     e.preventDefault()
-      //   fetch("https://authorandbooks.herokuapp.com/author", {
-      //    method: 'POST',
-      //   headers: {
-      //       'Content-Type': "application/json"
-      //  },
-      // body: JSON.stringify({
-      //    author: authorName.value,
-      //       age: age.value,
-      //  address: address.value,
-      //  books: books.value
-      //  })
-      // }).then(res => res.json())
-      // .then(data => {
-      //   let dataArr = []
-      //  dataArr.push(data)
-      // console.log(data, "**")
-      // })
-      // })
     </script>
   </body>
 </html>

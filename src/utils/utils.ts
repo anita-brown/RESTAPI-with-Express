@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import Joi from 'joi';
-import { Jwt } from 'jsonwebtoken';
+import {Request} from 'express';
+
 // import uuidv4 from 'uuidv4'
 // Export and Create interface for keys types in the object
 // Export, Create, Read and write files to database in json format
@@ -68,6 +69,8 @@ export function getIdForBooks (booksData: books[]): books[] {
 
 
 
+
+// Typescript interfaces for author, books and Users
 export interface author {
     id?: number,
     author: string,
@@ -92,4 +95,7 @@ export interface Users {
     password: string,
     dateOfBirth: string
 
+}
+export interface reqUser extends Request {
+  user?: string
 }

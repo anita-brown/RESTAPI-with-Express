@@ -1,10 +1,4 @@
-// window.onload = function() {
-    //     what();
-    //     function what(){
-        
-        //     };
-        // }
-        // let deleteAuthor;
+// GET ALL AUTHORS RENDERING
 
         let authorName = document.getElementById('author-name')
         let age = document.getElementById('author-age')
@@ -20,10 +14,10 @@
         const testClass = document.querySelector('.testing');
 
         
-        const imageArr = ["./images/box1.png", "./images/box2.png"];
+        const imageArr = ["./images/box1.png", "./images/box2.png", "./images/box3.png", "./images/box4.png"];
         const bookArr = ["./images/book1.jpeg", "./images/book2.jpeg"]
 
-        // console.log(testClass, "****")
+  
         
         
         async function fetchData(){
@@ -31,9 +25,6 @@
             const {data} = await res.json()
             // console.log(data)
             
-            
-            /* GET function*/
-            // function renderData(fetchData){
                 let authorInfo = data;
                 let bookNo = "";
                 rootDiv.innerHTML = "";
@@ -57,10 +48,7 @@
                     </div>
                     `
                 })
-                // }
-                
-                
-                //close
+            
             }// Get rendering
             
             fetchData()
@@ -80,22 +68,22 @@
                      .then(res => res.json())
                      .then(() => location.reload())
                  }
-                 if(editButton){
-                   console.log("edit author")
-                   const parent = e.target.parentElement.parentElement.parentElement;
-                   console.log(parent, 'ttt')
-                   let authorContent = parent.querySelector(".content").textContent;
-                   let ageContent = parent.querySelector(".age-content").textContent;
-                   let addContent = parent.querySelector(".add-content").textContent;
-                   let bookContent = parent.querySelector(".book-content").textContent;
-                   console.log(authorContent,ageContent,addContent,bookContent)
+                //  if(editButton){
+                //    console.log("edit author")
+                //    const parent = e.target.parentElement.parentElement.parentElement;
+                //    console.log(parent, 'ttt')
+                //    let authorContent = parent.querySelector(".content").textContent;
+                //    let ageContent = parent.querySelector(".age-content").textContent;
+                //    let addContent = parent.querySelector(".add-content").textContent;
+                //    let bookContent = parent.querySelector(".book-content").textContent;
+                //    console.log(authorContent,ageContent,addContent,bookContent)
 
 
-                   authorName.value = authorContent;
-                   age.value = ageContent;
-                   add.value = addContent;
-                   book.value = bookContent;
-                  }
+                //    authorName.value = authorContent;
+                //    age.value = ageContent;
+                //    add.value = addContent;
+                //    book.value = bookContent;
+                //   }
 
                   saveBtn.addEventListener('click', (e)=>{
                     console.log('updated')

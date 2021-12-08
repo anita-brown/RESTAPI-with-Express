@@ -1,12 +1,13 @@
 import express, {NextFunction, Request, Response} from 'express';
-import router from './post';
 import{ getABook,postBook,updateBook,deleteBook } from '../controller/bookController';
+import { checkAuth } from '../controller/usersController';
 
+const router = express.Router();
 
 router.get('/:authorId/:bookId', getABook)
-router.post('/:authorId/:bookId', postBook)
-router.put('/:authorId/:bookId', updateBook)
-router.delete('/:authorId/:bookId', deleteBook)
+router.post('/:authorId/:bookId', checkAuth, postBook)
+router.put('/:authorId/:bookId', checkAuth, updateBook)
+router.delete('/:authorId/:bookId',checkAuth, deleteBook)
 
 
 export default router;

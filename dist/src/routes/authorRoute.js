@@ -5,12 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const authorController_1 = __importDefault(require("../controller/authorController"));
+const usersController_1 = require("../controller/usersController");
 const router = express_1.default.Router();
 router.get('/', authorController_1.default.getAllAuthors);
 router.get('/:id', authorController_1.default.getAuthorById);
-router.post('/', authorController_1.default.postAuthor);
-router.put('/:id', authorController_1.default.updateAuthor);
-router.delete('/:id', authorController_1.default.deleteAuthor);
+router.post('/', usersController_1.checkAuth, authorController_1.default.postAuthor);
+router.put('/:id', usersController_1.checkAuth, authorController_1.default.updateAuthor);
+router.delete('/:id', usersController_1.checkAuth, authorController_1.default.deleteAuthor);
 // router.get('/:authorId/book/:bookId', getABook)
 // router.post('/:authorId/add-book', postBook)
 // router.put('/:authorId/book/:bookId', updateBook)
